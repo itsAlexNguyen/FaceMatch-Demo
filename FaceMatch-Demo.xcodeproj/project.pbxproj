@@ -54,14 +54,54 @@
 		465105161D0E279F00235864 /* FaceMatch-Demo */ = {
 			isa = PBXGroup;
 			children = (
-				465105171D0E279F00235864 /* AppDelegate.swift */,
-				465105191D0E279F00235864 /* ViewController.swift */,
-				4651051B1D0E279F00235864 /* Main.storyboard */,
-				4651051E1D0E279F00235864 /* Assets.xcassets */,
-				465105201D0E279F00235864 /* LaunchScreen.storyboard */,
-				465105231D0E279F00235864 /* Info.plist */,
+				4651052D1D0E280400235864 /* Supporting Files */,
+				4651052C1D0E27FF00235864 /* Services */,
+				4651052B1D0E27FA00235864 /* Controller */,
+				4651052A1D0E27F200235864 /* View */,
+				465105291D0E27ED00235864 /* Model */,
 			);
 			path = "FaceMatch-Demo";
+			sourceTree = "<group>";
+		};
+		465105291D0E27ED00235864 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4651052A1D0E27F200235864 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				465105201D0E279F00235864 /* LaunchScreen.storyboard */,
+				4651051B1D0E279F00235864 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4651052B1D0E27FA00235864 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				465105191D0E279F00235864 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4651052C1D0E27FF00235864 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		4651052D1D0E280400235864 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4651051E1D0E279F00235864 /* Assets.xcassets */,
+				465105171D0E279F00235864 /* AppDelegate.swift */,
+				465105231D0E279F00235864 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +136,7 @@
 				TargetAttributes = {
 					465105131D0E279F00235864 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = VUFGSJ9CH2;
 					};
 				};
 			};
@@ -251,10 +292,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "FaceMatch-Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.itsAlexNguyen.FaceMatch-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -262,10 +306,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "FaceMatch-Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.itsAlexNguyen.FaceMatch-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
