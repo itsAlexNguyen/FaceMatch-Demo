@@ -1,0 +1,1 @@
+../../../ProjectOxfordFace/Face/iOS/Pod/Classes/MPOCandidate.h
