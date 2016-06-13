@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainVC: UIViewController {
+    @IBOutlet weak var cameraView: CameraView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        cameraView.setSize(cameraView.bounds)
+    }
 
 }
 

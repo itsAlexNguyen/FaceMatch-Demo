@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="FaceMatch_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,55 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZv-S7-1h1" customClass="CameraView" customModule="FaceMatch_Demo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owB-ds-jox">
+                                        <rect key="frame" x="262" y="494" width="77" height="78"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="77" id="LgS-QX-fvM"/>
+                                            <constraint firstAttribute="height" constant="78" id="nRh-bq-yps"/>
+                                        </constraints>
+                                        <state key="normal" image="shutter"/>
+                                    </button>
+                                    <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMF-q5-Y4L">
+                                        <rect key="frame" x="540" y="20" width="40" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="34G-v1-kBS"/>
+                                            <constraint firstAttribute="height" constant="33" id="htu-e7-SYy"/>
+                                        </constraints>
+                                        <state key="normal" image="switch-cam"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="GMF-q5-Y4L" secondAttribute="trailing" constant="20" id="4SY-qm-hZt"/>
+                                    <constraint firstAttribute="bottom" secondItem="owB-ds-jox" secondAttribute="bottom" constant="8" id="7vj-I2-2jm"/>
+                                    <constraint firstItem="owB-ds-jox" firstAttribute="centerX" secondItem="eZv-S7-1h1" secondAttribute="centerX" id="IHY-3H-vxq"/>
+                                    <constraint firstItem="GMF-q5-Y4L" firstAttribute="top" secondItem="eZv-S7-1h1" secondAttribute="top" constant="20" id="Q5h-Kl-UG3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="eZv-S7-1h1" secondAttribute="trailing" id="FHE-k3-9CG"/>
+                            <constraint firstItem="eZv-S7-1h1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Gbv-Kg-Km7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eZv-S7-1h1" secondAttribute="bottom" id="H1r-bM-7Iu"/>
+                            <constraint firstItem="eZv-S7-1h1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zoF-qb-c8v"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraView" destination="eZv-S7-1h1" id="zP4-Qn-Z3n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="385"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="shutter" width="77" height="78"/>
+        <image name="switch-cam" width="84" height="68"/>
+    </resources>
 </document>
