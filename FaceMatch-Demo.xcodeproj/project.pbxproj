@@ -10,10 +10,11 @@
 		465105181D0E279F00235864 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465105171D0E279F00235864 /* AppDelegate.swift */; };
 		4651051A1D0E279F00235864 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465105191D0E279F00235864 /* MainVC.swift */; };
 		4651051D1D0E279F00235864 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4651051B1D0E279F00235864 /* Main.storyboard */; };
-		4651051F1D0E279F00235864 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4651051E1D0E279F00235864 /* Assets.xcassets */; };
 		465105221D0E279F00235864 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 465105201D0E279F00235864 /* LaunchScreen.storyboard */; };
 		465105321D0E2AE300235864 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465105311D0E2AE300235864 /* CameraView.swift */; };
 		465105341D0E30A000235864 /* SelectedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465105331D0E30A000235864 /* SelectedImage.swift */; };
+		465105361D0E3AE200235864 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 465105351D0E3AE200235864 /* Assets.xcassets */; };
+		465105381D0E3E0400235864 /* FaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465105371D0E3E0400235864 /* FaceService.swift */; };
 		D068EAF9C62D3EDA7860FF7E /* Pods_FaceMatch_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3CAA6BD9709DD14B62F479 /* Pods_FaceMatch_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,12 +26,13 @@
 		465105171D0E279F00235864 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		465105191D0E279F00235864 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		4651051C1D0E279F00235864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4651051E1D0E279F00235864 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		465105211D0E279F00235864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		465105231D0E279F00235864 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4651052E1D0E29A800235864 /* FaceMatch-Demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FaceMatch-Demo-Bridging-Header.h"; sourceTree = "<group>"; };
 		465105311D0E2AE300235864 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		465105331D0E30A000235864 /* SelectedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedImage.swift; sourceTree = "<group>"; };
+		465105351D0E3AE200235864 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		465105371D0E3E0400235864 /* FaceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		4651052C1D0E27FF00235864 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				465105371D0E3E0400235864 /* FaceService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -111,7 +114,7 @@
 		4651052D1D0E280400235864 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4651051E1D0E279F00235864 /* Assets.xcassets */,
+				465105351D0E3AE200235864 /* Assets.xcassets */,
 				465105171D0E279F00235864 /* AppDelegate.swift */,
 				465105231D0E279F00235864 /* Info.plist */,
 				4651052E1D0E29A800235864 /* FaceMatch-Demo-Bridging-Header.h */,
@@ -199,7 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				465105221D0E279F00235864 /* LaunchScreen.storyboard in Resources */,
-				4651051F1D0E279F00235864 /* Assets.xcassets in Resources */,
+				465105361D0E3AE200235864 /* Assets.xcassets in Resources */,
 				4651051D1D0E279F00235864 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				465105381D0E3E0400235864 /* FaceService.swift in Sources */,
 				465105321D0E2AE300235864 /* CameraView.swift in Sources */,
 				4651051A1D0E279F00235864 /* MainVC.swift in Sources */,
 				465105341D0E30A000235864 /* SelectedImage.swift in Sources */,

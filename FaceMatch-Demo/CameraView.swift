@@ -47,6 +47,48 @@ class CameraView: UIView {
         }
         previewLayer?.opacity = 1.0
         previewLayer?.zPosition = -1
+        isBackCamera = true
+    }
+    func takePhoto() -> UIImage? {
+        var returnImage: UIImage?
+        previewLayer?.opacity = 0.4
+        if let videoConnection = stillImageOutput!.connectionWithMediaType(AVMediaTypeVideo) {
+            videoConnection.videoOrientation = AVCaptureVideoOrientation.Portrait
+            stillImageOutput?.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler: {(sampleBuffer, error) in
+                if (sampleBuffer != nil) {
+                    let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
+                    let dataProvider = CGDataProviderCreateWithCFData(imageData)
+                    let cgImageRef = CGImageCreateWithJPEGDataProvider(dataProvider, nil, true, CGColorRenderingIntent.RenderingIntentDefault)
+                    
+                    let image = UIImage(CGImage: cgImageRef!, scale: 1.0, orientation: UIImageOrientation.Right)
+                    returnImage = image
+                }
+            })
+        }
+        return returnImage
+    }
+    func changeCamera() {
+        captureSession?.removeInput(input)
+        guard var backCamera = AVCaptureDevice.devices().filter({ $0.position == .Front })
+            .first as? AVCaptureDevice else {
+                fatalError("No front facing camera found")
+        }
+        
+        if !isBackCamera {
+            backCamera = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+            isBackCamera = true
+        } else {
+            isBackCamera = false
+        }
+        
+        var error: NSError?
+        do {
+            input = try AVCaptureDeviceInput(device: backCamera)
+        } catch let error1 as NSError {
+            error = error1
+            input = nil
+        }
+        captureSession?.addInput(input)
     }
     
     func setSize(size: CGRect){
